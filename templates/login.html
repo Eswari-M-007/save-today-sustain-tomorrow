@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Login | Save Today Sustain Tomorrow</title>
+
+    <link rel="stylesheet"
+        href="{{ url_for('static', filename='css/login.css') }}">
+
+</head>
+
+<body>
+
+    <div class="container">
+
+        <div class="login-box">
+
+            <h1>🌱 Welcome Back</h1>
+
+            <p>Login to continue your sustainability journey.</p>
+
+            <form method="POST">
+
+<input type="email" name="email" placeholder="Enter email">
+
+<input type="password" name="password" placeholder="Enter password">
+
+<button type="submit">Login</button>
+
+</form>
+
+            <div class="register-link">
+
+                Don't have an account?
+
+                <a href="/register">Register</a>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</body>
+
+</html>

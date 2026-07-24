@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+<title>Water Tracker</title>
+
+<style>
+
+body{
+    font-family: Arial;
+    background:#e3f2fd;
+    text-align:center;
+    padding:50px;
+}
+
+.box{
+    background:white;
+    padding:30px;
+    border-radius:15px;
+    width:350px;
+    margin:auto;
+    box-shadow:0px 5px 15px gray;
+}
+
+button{
+    background:#0288d1;
+    color:white;
+    padding:10px 25px;
+    border:none;
+    border-radius:20px;
+}
+
+</style>
+
+</head>
+
+<body>
+
+<div class="box">
+
+<h1>💧 Water Usage Tracker</h1>
+
+<p>
+"Save water today, secure tomorrow."
+</p>
+
+<form method="POST">
+
+<label>
+Enter today's water usage (litres)
+</label>
+
+<br><br>
+
+<input type="number" name="amount" required>
+
+<br><br>
+
+<button type="submit">
+Save Usage
+</button>
+
+</form>
+<hr>
+
+<h2>📋 Your Water Usage History</h2>
+
+<table border="1" cellpadding="10" cellspacing="0" style="margin:auto; border-collapse:collapse;">
+
+    <tr style="background-color:#4CAF50; color:white;">
+        <th>Water Used (Litres)</th>
+        <th>Date</th>
+    </tr>
+
+    {% for record in records %}
+
+    <tr>
+        <td>{{ record[0] }} L</td>
+        <td>{{ record[1] }}</td>
+    </tr>
+
+    {% endfor %}
+
+</table>
+
+<br>
+
+<div style="background:#e8f5e9; padding:15px; border-radius:10px;">
+    <h3>💡 Water Saving Tip</h3>
+    <p>
+        Turn off the tap while brushing your teeth. This simple habit can save several litres of water every day.
+    </p>
+</div>
+
+</div>
+
+</body>
+
+</html>

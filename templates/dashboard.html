@@ -1,0 +1,248 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Save Today Sustain Tomorrow</title>
+
+    <style>
+        body {
+            margin: 0;
+            font-family: Arial, sans-serif;
+            background: #f0f8f2;
+        }
+
+        .header {
+            background: linear-gradient(135deg, #2e7d32, #66bb6a);
+            color: white;
+            padding: 40px;
+            text-align: center;
+        }
+
+        .header h1 {
+            font-size: 38px;
+            margin-bottom: 10px;
+        }
+
+        .quote {
+            font-size: 20px;
+            font-style: italic;
+        }
+
+        .container {
+            padding: 30px;
+        }
+
+        .welcome {
+            background: white;
+            padding: 25px;
+            border-radius: 15px;
+            box-shadow: 0px 5px 15px #ccc;
+            text-align: center;
+        }
+
+        .cards {
+            display: flex;
+            justify-content: space-around;
+            flex-wrap: wrap;
+            margin-top: 30px;
+        }
+
+        .card {
+            background: white;
+            width: 250px;
+            margin: 15px;
+            padding: 25px;
+            border-radius: 15px;
+            text-align: center;
+            box-shadow: 0px 5px 15px #ccc;
+            transition: 0.3s;
+        }
+
+        .card:hover {
+            transform: translateY(-8px);
+        }
+
+        .card h2 {
+            color: #2e7d32;
+        }
+
+        .card p {
+            color: #555;
+        }
+
+        .footer {
+            background: #2e7d32;
+            color: white;
+            text-align: center;
+            padding: 15px;
+            margin-top: 30px;
+        }
+
+        button {
+            background: #2e7d32;
+            color:white;
+            border:none;
+            padding:12px 25px;
+            border-radius:25px;
+            cursor:pointer;
+        }
+
+        button:hover {
+            background:#1b5e20;
+        }
+
+    </style>
+
+</head>
+
+
+<body>
+
+
+<div class="header">
+
+<h2>
+Welcome, {{username}} 🌱
+</h2>
+
+<p>
+Your journey towards a sustainable future begins here.
+</p>
+
+<br>
+
+<a href="/logout">
+<button>🚪 Logout</button>
+</a>
+
+</div>
+
+
+<div class="container">
+
+
+<div class="welcome">
+
+<h2>🌍 Sustainability Dashboard</h2>
+
+<p>
+Welcome <b>{{ username }}</b>! Every sustainable action you take helps build a greener future.
+</p>
+
+</div>
+
+<div class="cards">
+
+<div class="card">
+    <h2>💧 Water Entries</h2>
+    <h1>{{ water_count }}</h1>
+    <p>Total water records saved.</p>
+</div>
+
+<div class="card">
+    <h2>⚡ Electricity Entries</h2>
+    <h1>{{ electricity_count }}</h1>
+    <p>Total electricity records saved.</p>
+</div>
+
+<div class="card">
+    <h2>🍽 Food Entries</h2>
+<h1>{{ food_count }}</h1>
+</div>
+
+</div>
+
+
+
+<div class="cards">
+
+
+<div class="card">
+
+<h2>💧 Water Saver</h2>
+
+<p>
+Monitor your water-saving habits and learn efficient usage practices.
+</p>
+<a href="/water">
+<button>Track Water 💧</button>
+</a>
+
+</div>
+
+
+
+<div class="card">
+
+<h2>⚡ Energy Tracker</h2>
+
+<p>
+Track electricity consumption and discover ways to save energy.
+</p>
+
+<a href="/electricity">
+<button>Track Electricity ⚡</button>
+</a>
+
+</div>
+
+
+
+<div class="card">
+
+<h2>🍽️ Food Waste Tracker</h2>
+
+<p>
+Track your daily food waste and reduce unnecessary waste.
+</p>
+
+<a href="/food">
+<button>Track Food 🍽️</button>
+</a>
+
+</div>
+
+
+<div class="card">
+
+<h2>🌱 Sustainability Score</h2>
+
+<h1>{{ score }}/100</h1>
+
+{% if score >= 80 %}
+
+<p>🏆 Eco Champion</p>
+
+{% elif score >= 50 %}
+
+<p>🌿 Eco Hero</p>
+
+{% elif score >= 20 %}
+
+<p>🌱 Green Beginner</p>
+
+{% else %}
+
+<p>🌍 Start Your Green Journey</p>
+
+{% endif %}
+
+</div>
+
+
+</div>
+
+</div>
+
+
+
+<div class="footer">
+
+<p>
+"Be the change you wish to see in the world — consume responsibly, protect tomorrow."
+</p>
+
+</div>
+
+
+</body>
+</html>

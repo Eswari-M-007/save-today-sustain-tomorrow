@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+
+    <title>Food Waste Tracker</title>
+
+    <style>
+
+        body{
+            font-family:Arial;
+            background:#f8fff2;
+            text-align:center;
+            padding:50px;
+        }
+
+        .box{
+            background:white;
+            width:600px;
+            margin:auto;
+            padding:30px;
+            border-radius:15px;
+            box-shadow:0px 5px 15px gray;
+        }
+
+        input{
+            width:250px;
+            padding:10px;
+        }
+
+        button{
+            background:#43a047;
+            color:white;
+            border:none;
+            padding:10px 25px;
+            border-radius:20px;
+            cursor:pointer;
+        }
+
+        button:hover{
+            background:#2e7d32;
+        }
+
+        table{
+            width:100%;
+            margin-top:20px;
+            border-collapse:collapse;
+        }
+
+        th{
+            background:#43a047;
+            color:white;
+        }
+
+        th,td{
+            border:1px solid #ddd;
+            padding:10px;
+        }
+
+        .tip{
+            margin-top:20px;
+            background:#e8f5e9;
+            padding:15px;
+            border-radius:10px;
+        }
+
+    </style>
+
+</head>
+
+<body>
+
+<div class="box">
+
+<h1>🍽️ Food Waste Tracker</h1>
+
+<p>
+Reduce food waste today for a sustainable tomorrow.
+</p>
+
+<form method="POST">
+
+<input
+type="text"
+name="waste"
+placeholder="Example: 2 slices of bread"
+required>
+
+<br><br>
+
+<button>
+Save Record
+</button>
+
+</form>
+
+<hr>
+
+<h2>📋 Food Waste History</h2>
+
+<table>
+
+<tr>
+
+<th>Food Wasted</th>
+<th>Date</th>
+
+</tr>
+
+{% for record in records %}
+
+<tr>
+
+<td>{{ record[0] }}</td>
+<td>{{ record[1] }}</td>
+
+</tr>
+
+{% endfor %}
+
+</table>
+
+<div class="tip">
+
+<h3>💡 Food Saving Tip</h3>
+
+<p>
+Plan your meals, store leftovers properly, and avoid buying more food than you need.
+</p>
+
+</div>
+
+</div>
+
+</body>
+</html>
